@@ -1,0 +1,19 @@
+.custommargin{
+    padding-left: 50px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.custompadding{
+    padding-left: 60px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+}
+
+.chitiethinh{
+    width: 100%;
+    height: auto;
+}
+
+/* .custommarginBtn{
+    margin-top: 128px;
+} */

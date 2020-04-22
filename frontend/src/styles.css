@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.input-lg{
+    font-size: 18px;
+    color: #2E004B;
+}
+
+.topmargin{
+    margin-top: 25px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+.custombtn{
+    width: 302px;
+}

@@ -1,0 +1,61 @@
+<!-- popular_courses_start -->  
+<div class="popular_courses">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="course_nav">
+          <nav>
+            <ul class="nav" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">Tất cả</a>
+              </li>
+              <li class="nav-item" *ngFor="let item of loaikhoahocs">
+                <a class="nav-link" id="Adobe-XD-tab9" data-toggle="tab" href="#Adobe-XD9" role="tab"
+                  aria-controls="design" aria-selected="false">{{item.TenKhoaHoc}}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="all_courses">
+    <div class="container">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let lophocphan of lophocphans">
+              <div class="single_courses">
+                <div class="thumb">
+                  <a href="/chitietkhoahoc">
+                    <img src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/31044378_187203928586240_925501839527378944_n.jpg?_nc_cat=105&_nc_sid=8024bb&_nc_ohc=Tp_AFy5MaxwAX-z3D1d&_nc_ht=scontent.fvca1-1.fna&oh=f5e5056d3efc94ffa4695f54b1708553&oe=5EC2BCE3" alt="">
+                  </a>
+                </div>
+                <div class="courses_info">
+                  <span>{{lophocphan.IDKhoaHoc}}</span>
+                  <h3><a href="/chitietkhoahoc">{{lophocphan.TenLopHocPhan}}</a></h3>
+                  <div class="star_prise d-flex justify-content-between">
+                    <div class="prise">
+                      <span class="active_prise">
+                        {{lophocphan.HocPhi}} VNĐ
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-12">
+              <div class="more_courses text-center">
+                <a href="#" class="boxed_btn_rev">More Courses</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- popular_courses_end-->

@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+
+input[type=radio] {
+    width: 18px;
+    height: 18px;
+}
+.btnDangKi{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
