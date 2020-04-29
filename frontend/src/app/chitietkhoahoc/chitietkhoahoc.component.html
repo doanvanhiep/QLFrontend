@@ -1,50 +1,44 @@
 <div class="container-fluid">
-  <h1 class="custommargin">Lớp học toeic</h1>
+  <h1 class="custommargin">{{LopHocPhan.TenLopHocPhan}}</h1>
   <div class="row">
     <div class="col-md-5 custompadding">
       <img class="chitiethinh"
-        src="https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/31044378_187203928586240_925501839527378944_n.jpg?_nc_cat=105&_nc_sid=8024bb&_nc_ohc=Tp_AFy5MaxwAX-z3D1d&_nc_ht=scontent.fvca1-1.fna&oh=f5e5056d3efc94ffa4695f54b1708553&oe=5EC2BCE3"
+        src="https://drive.google.com/uc?id={{LopHocPhan.HinhAnh}}"
         alt="">
     </div>
     <div class="col-md-7 custompadding">
       <form>
-        <div class="row">
+        <div class="row"> 
           <div class="col">
             <div class="form-group">
-              <label for="selectCaHoc" class="input-lg">Ca học:</label>
-              <select class="form-control input-lg" id="selectCaHoc">
-                <option>Ca 1 (7h-9h)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <label for="selectthongtin" class="input-lg">Thông tin lớp học</label>
+              <select [(ngModel)]="selectedThongTinLopHoc" name="something" class="form-control input-lg" id="selectthongtin">
+                <option *ngFor="let ttlh of thongtinlophoc" value="{{ttlh.IDLopHoc}}">
+                  {{ttlh.ThongTinLopHoc}}
+                </option>
               </select>
             </div>
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="selectThuTrongTuan" class="input-lg">Buổi học:</label>
-              <select class="form-control input-lg" id="selectThuTrongTuan">
-                <option>Thứ 2 - Thứ 4 - Thứ 6</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
+              <label for="selectThuTrongTuan" class="input-lg">Chú thích giờ ca học</label>
+              <p class="input-lg">Ca 1(7h-9h); Ca 2(9h15-11h15); Ca 3(13h-15h); Ca 4(15h15-17h15); Ca 5(19h-21h)</p>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="hoten" class="input-lg">Học phí: 8000000 VNĐ</label>
+          <label for="hoten" class="input-lg">Học phí: {{LopHocPhan.HocPhi | number}} VNĐ</label>
+        </div>
+        <div class="form-group">
+          <label for="hoten" class="input-lg">Số buổi: {{LopHocPhan.SoBuoi}}</label>
         </div>
         <div class="form-group">
           <label for="hoten" class="input-lg">Mô tả:</label>
-          <p class="input-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore asperiores, eligendi quas eveniet expedita velit mollitia ad saepe 
-            molestias ex omnis consequuntur nulla in consequatur quidem adipisci enim quis!</p>
+          <p class="input-lg">{{LopHocPhan.MoTa}}</p>
         </div>
-        <Button class="btn btn-success custommarginBtn">Đăng kí lớp học</Button>
       </form>
+      <button class="btn btn-success custommarginBtn" (click)="dangki()">Đăng kí lớp học</button>
     </div>
   </div>
 </div>

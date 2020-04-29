@@ -1,0 +1,28 @@
+<div class="centered">
+
+  <div *ngIf=thanhcong>
+    <div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
+      <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+      <span class="swal2-success-line-tip"></span>
+      <span class="swal2-success-line-long"></span>
+      <div class="swal2-success-ring"></div>
+      <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+      <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+    </div>
+    <h1 class="thanhcong">Thanh toán thành công</h1>
+  </div>
+  <!-- https://bootsnipp.com/snippets/2eEjz -->
+  <div *ngIf=thatbai>
+    <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;">
+      <span class="swal2-x-mark">
+        <span class="swal2-x-mark-line-left"></span>
+        <span class="swal2-x-mark-line-right"></span>
+      </span>
+    </div>
+    <h1 class="thatbai">Thanh toán thất bại</h1>
+  </div>
+
+  <h2 class="info">Xin vui lòng xem chi tiết trong email <br> hoặc <a style="text-decoration: underline;" [routerLink]="['/lienhe']" routerLinkActive="router-link-active" >liên hệ </a> chúng tôi</h2>
+  <button class="btn btn-success" [routerLink]="['/']" routerLinkActive="router-link-active" >Trở về trang chủ</button>
+  
+</div>

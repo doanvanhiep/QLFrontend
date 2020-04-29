@@ -6,12 +6,14 @@ import { ChitietkhoahocComponent} from './chitietkhoahoc/chitietkhoahoc.componen
 import { DangkikhoahocComponent} from './dangkikhoahoc/dangkikhoahoc.component';
 import { LienheComponent} from './lienhe/lienhe.component';
 import { from } from 'rxjs';
+import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component';
 const routes: Routes = [
-  {path:'',redirectTo:'dangkikhoahoc',pathMatch:'full'},
+  {path:'',redirectTo:'khoahoc',pathMatch:'full'},
   {path:'khoahoc',component: KhoahocComponent},
-  {path:'chitietkhoahoc',component: ChitietkhoahocComponent},
+  {path:'chitietkhoahoc/:IDLopHocPhan',component: ChitietkhoahocComponent},
   {path:'dangkikhoahoc',component: DangkikhoahocComponent},
   {path:'lienhe',component: LienheComponent},
+  {path:'thanhtoanmomo',component: ThanhtoanmomoComponent},
 ];
 
 @NgModule({

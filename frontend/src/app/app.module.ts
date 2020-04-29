@@ -9,6 +9,8 @@ import { ChitietkhoahocComponent } from './chitietkhoahoc/chitietkhoahoc.compone
 import { DangkikhoahocComponent } from './dangkikhoahoc/dangkikhoahoc.component';
 import { LienheComponent } from './lienhe/lienhe.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component';
 
 @NgModule({
    declarations: [
@@ -17,14 +19,19 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
       ChitietkhoahocComponent,
       DangkikhoahocComponent,
       LienheComponent,
+      ThanhtoanmomoComponent
    ],
    imports: [
       BrowserModule,
       CommonModule,
       AppRoutingModule,
       HttpClientModule,
-      RecaptchaModule,  //this is the recaptcha main module
-      RecaptchaFormsModule, //this is the module for form incase form validation
+      RecaptchaModule,
+      FormsModule,
+      ReactiveFormsModule
+      //thisistherecaptchamainmodule\nRecaptchaFormsModule,
+      //thisisthemoduleforformincaseformvalidation\nFormsModule
+
    ],
    providers: [],
    bootstrap: [

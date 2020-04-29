@@ -22,4 +22,12 @@ constructor(private http: HttpClient) { }
           return res;
       }));
     }
+    
+    getListLopHocPhanByID(IDLopHocPhan)
+    {
+      return this.http.get<any>(`${environment.apiUrl}lophocphan/${IDLopHocPhan}`)
+      .pipe(map(res=>{
+          return res.result.data[0];
+      }));
+    }
 }
