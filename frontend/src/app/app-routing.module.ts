@@ -10,7 +10,7 @@ import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component'
 const routes: Routes = [
   {path:'',redirectTo:'khoahoc',pathMatch:'full'},
   {path:'khoahoc',component: KhoahocComponent},
-  {path:'chitietkhoahoc/:IDLopHocPhan',component: ChitietkhoahocComponent},
+  {path:'chitietkhoahoc',component: ChitietkhoahocComponent},
   {path:'dangkikhoahoc',component: DangkikhoahocComponent},
   {path:'lienhe',component: LienheComponent},
   {path:'thanhtoanmomo',component: ThanhtoanmomoComponent},

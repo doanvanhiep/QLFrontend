@@ -16,16 +16,15 @@
           <input type="number" class="form-control input-lg" formControlName="sdt">
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="phuongthucthanhtoan" id="momo" 
-          value="ThanhToanMomo"
-            checked>
+          <input class="form-check-input" type="radio" formControlName="phuongthucthanhtoan"
+          id="momo" value="momo">
           <label class="form-check-label input-lg" for="momo">
             Thanh toán momo
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="phuongthucthanhtoan" id="trungtam"
-            value="ThanhToanTrungTam">
+          <input class="form-check-input"type="radio" formControlName="phuongthucthanhtoan" 
+          id="trungtam" value="trungtam">
           <label class="form-check-label input-lg" for="trungtam">
             Thanh toán trung tâm
           </label>
@@ -40,16 +39,19 @@
       <h1>Thông tin lớp học</h1>
       <form>
         <div class="form-group">
-          <label for="hoten" class="input-lg">Họ tên: Tên của lớp học</label>
+          <label for="hoten" class="input-lg">Tên khóa học: {{LopHoc.TenLopHocPhan}}</label>
         </div>
         <div class="form-group">
-          <label for="emai" class="input-lg">Thời gian của lớp học: Thời gian lớp học</label>
+          <label for="emai" class="input-lg">Ca học: {{LopHoc.ThongTinLopHoc}}</label>
         </div>
         <div class="form-group">
-          <label for="sdt" class="input-lg">Ngày khai giảng: Ngày khai giảng</label>
+          <label for="sdt" class="input-lg">Ngày khai giảng: {{LopHoc.ThongTinKhaiGiang ? LopHoc.ThongTinKhaiGiang.NgayKhaiGiang:""}}</label>
         </div>
         <div class="form-group">
-          <label for="sdt" class="input-lg">Học phí: Học phí</label>
+          <label for="sdt" class="input-lg">Ngày bế giảng: {{LopHoc.ThongTinKhaiGiang ? LopHoc.ThongTinKhaiGiang.NgayBeGiang:""}}</label>
+        </div>
+        <div class="form-group">
+          <label for="sdt" class="input-lg">Học phí: {{LopHoc.HocPhi}}</label>
         </div>
       </form>
     </div>

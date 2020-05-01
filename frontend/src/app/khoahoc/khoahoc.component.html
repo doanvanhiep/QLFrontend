@@ -28,14 +28,14 @@
             <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let lophocphan of lophocphans">
               <div class="single_courses">
                 <div class="thumb">
-                  <a  (click)="sendData($event)" [routerLink]="['/chitietkhoahoc', lophocphan.IDLopHocPhan]"
+                  <a  (click)="sendData($event)" [routerLink]="['/chitietkhoahoc']"
                   routerLinkActive="router-link-active" >
                     <img id={{lophocphan.IDLopHocPhan}} src="https://drive.google.com/uc?id={{lophocphan.HinhAnh}}" alt="">
                   </a>
                 </div>
-                <div class="courses_info">
+                <div class="courses_info"> 
                   <span>{{lophocphan.TenKhoaHoc}}</span>
-                  <h3><a id={{lophocphan.IDLopHocPhan}} (click)="sendData($event)"[routerLink]="['/chitietkhoahoc', lophocphan.IDLopHocPhan]"
+                  <h3><a id={{lophocphan.IDLopHocPhan}} (click)="sendData($event)"[routerLink]="['/chitietkhoahoc']"
                   routerLinkActive="router-link-active" >{{lophocphan.TenLopHocPhan}} </a></h3>
                   <div class="star_prise d-flex justify-content-between">
                     <div class="prise">

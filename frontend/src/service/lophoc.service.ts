@@ -11,9 +11,17 @@ export class LophocService {
   constructor(
     private http: HttpClient
   ) { }
-  getThongTinLopHoc(IDLopHocPhan)
+  getThongTinLopHocByID()
   {
+    let IDLopHocPhan=localStorage.getItem('idLopHocPhan');
     return this.http.get<any>(`${environment.apiUrl}cahocbuoihocbylophocphan/${IDLopHocPhan}`)
+    .pipe(map(res=>{
+        return res;
+    }));
+  }
+  getThongTinKhaiGiangByID(IDLopHoc)
+  {
+    return this.http.get<any>(`${environment.apiUrl}getngaykhaigianglophoc/${IDLopHoc}`)
     .pipe(map(res=>{
         return res;
     }));

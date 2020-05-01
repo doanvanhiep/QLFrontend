@@ -23,8 +23,9 @@ constructor(private http: HttpClient) { }
       }));
     }
     
-    getListLopHocPhanByID(IDLopHocPhan)
+    getListLopHocPhanByID()
     {
+      var IDLopHocPhan=localStorage.getItem('idLopHocPhan');
       return this.http.get<any>(`${environment.apiUrl}lophocphan/${IDLopHocPhan}`)
       .pipe(map(res=>{
           return res.result.data[0];

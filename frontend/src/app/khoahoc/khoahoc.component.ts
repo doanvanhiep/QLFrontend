@@ -26,7 +26,7 @@ export class KhoahocComponent implements OnInit {
         var target = event.target || event.srcElement || event.currentTarget;
         var idAttr = target.attributes.id.value;
         idAttr=+idAttr;
-        this.share.shareDataLopHocPhan(this.lophocphans.filter(item => item.IDLopHocPhan === idAttr));
+        this.share.shareDataLopHocPhan(idAttr,this.lophocphans.filter(item => item.IDLopHocPhan === idAttr));
     }
     
     getListLoaiKhoaHoc() {

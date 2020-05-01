@@ -1,40 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { LophocService } from '../../service/lophoc.service';
 import { ComponentShareService } from '../../service/component-share.service';
 import { KhoaHocServiceService } from '../../service/KhoaHocService.service';
-
+import { ThongTinKhaiGiang } from '../models/ThongTinKhaiGiang';
+import { LopHocPhan } from '../models/LopHocPhan';
 @Component({
    selector: 'app-chitietkhoahoc',
    templateUrl: './chitietkhoahoc.component.html',
    styleUrls: ['./chitietkhoahoc.component.css']
 })
 export class ChitietkhoahocComponent implements OnInit {
-   idLopHocPhan: number;
-   thongtinlophoc;
-   LopHocPhan;
+   thongtinlophoc:any;
+   lopHocPhan:LopHocPhan;
+   thongTinKhaiGiang:ThongTinKhaiGiang;
    selectedThongTinLopHoc: any;
-   constructor(private route: ActivatedRoute,
+   constructor(
+      private router: Router,
       private lophocservice: LophocService,
       private share: ComponentShareService,
       private khoahocservice: KhoaHocServiceService) { }
    ngOnInit() {
-      this.idLopHocPhan = this.route.snapshot.params.IDLopHocPhan;
+      if(!localStorage.getItem("idLopHocPhan"))
+      {
+         this.router.navigate(['khoahoc']);
+         return;
+      }
       this.getThongTinLopHoc();
       this.getDaTaLopHocPhan();
-      if (this.LopHocPhan == null) {
-         this.khoahocservice.getListLopHocPhanByID(this.idLopHocPhan)
+      if (this.lopHocPhan == null) {
+         this.khoahocservice.getListLopHocPhanByID()
             .pipe()
             .subscribe(res => {
-               this.LopHocPhan = res;
+               this.lopHocPhan = res;
             });
       }
    }
    getDaTaLopHocPhan() {
-      this.LopHocPhan = this.share.receiveDataLopHocPhan();
+      this.lopHocPhan = this.share.receiveDataLopHocPhan();
    }
    getThongTinLopHoc() {
-      this.lophocservice.getThongTinLopHoc(this.idLopHocPhan)
+      this.lophocservice.getThongTinLopHocByID()
          .pipe()
          .subscribe(res => {
             this.thongtinlophoc = res.result.data;
@@ -46,8 +52,19 @@ export class ChitietkhoahocComponent implements OnInit {
          alert("Vui lòng chọn thông tin lớp học!");
       }
       else {
-         alert(this.selectedThongTinLopHoc); 
+         this.lopHocPhan.IDLopHoc=+this.selectedThongTinLopHoc;
+         this.lopHocPhan.ThongTinLopHoc=(this.thongtinlophoc.find(item=>item.IDLopHoc===+this.selectedThongTinLopHoc).ThongTinLopHoc);
+         this.lopHocPhan.ThongTinKhaiGiang=this.thongTinKhaiGiang;
+         this.share.shareDataLopHoc(this.lopHocPhan);
+         this.router.navigate(['/dangkikhoahoc']);
       }
+   }
+   changeIDLopHoc(IDLopHoc){
+      this.lophocservice.getThongTinKhaiGiangByID(IDLopHoc)
+      .pipe()
+      .subscribe(res=>{
+         this.thongTinKhaiGiang=res.result.data;
+      })
    }
 
 }
