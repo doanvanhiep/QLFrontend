@@ -1,55 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Trung tâm anh ngữ</title>
-    <base href="/">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://www.google.com/recaptcha/api.js?onload=vcRecapthaApiLoaded&render=explicit&hl=en" async
-        defer></script>
+    <base href="/" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=vcRecapthaApiLoaded&render=explicit&hl=en"
+      async
+      defer
+    ></script>
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
     <!-- Place favicon.ico in the root directory -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/gijgo.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+    <link rel="stylesheet" href="assets/css/flaticon.css" />
+    <link rel="stylesheet" href="assets/css/gijgo.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/slicknav.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
+  <body style="font-family: Verdana;">
     <app-root></app-root>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v6.0'
-            });
-        };
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v6.0",
+        });
+      };
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
 
     <!-- Your customer chat code -->
-    <div class="fb-customerchat" attribution=setup_tool page_id="103375561297608"
-        logged_in_greeting="Hi! How can we help you?" logged_out_greeting="Hi! How can we help you?">
-    </div>
+    <div
+      class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="103375561297608"
+      logged_in_greeting="Hi! How can we help you?"
+      logged_out_greeting="Hi! How can we help you?"
+    ></div>
     <!-- JS here -->
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -78,7 +98,6 @@
     <script src="./assets/js/mail-script.js"></script>
 
     <script src="./assets/js/main.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-</body>
-
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </body>
 </html>
