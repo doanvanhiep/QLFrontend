@@ -10,8 +10,8 @@ import { map } from 'rxjs/operators';
 export class DangkikhoahocService {
 
     constructor(private http: HttpClient) { }
-    sendMoMo(HoTen, Email, SoDienThoai, IDKhoaHoc, SoTien) {
-        return this.http.post<any>(`${environment.apiUrl}sendmomo`, { HoTen, SoDienThoai, Email, IDKhoaHoc, SoTien })
+    dangKiLopHoc(TenHocVien, Email, SoDienThoai, IDLopHoc,HinhThucThanhToan,SoTien) {
+        return this.http.post<any>(`${environment.apiUrl}dangkilophoc`, { TenHocVien, Email, SoDienThoai, IDLopHoc,HinhThucThanhToan,SoTien })
             .pipe(map(res => {
                 return res;
             }));

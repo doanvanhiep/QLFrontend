@@ -7,6 +7,7 @@ import { DangkikhoahocComponent} from './dangkikhoahoc/dangkikhoahoc.component';
 import { LienheComponent} from './lienhe/lienhe.component';
 import { from } from 'rxjs';
 import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component';
+import { GiangvienComponent } from './giangvien/giangvien.component';
 const routes: Routes = [
   {path:'',redirectTo:'khoahoc',pathMatch:'full'},
   {path:'khoahoc',component: KhoahocComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'dangkikhoahoc',component: DangkikhoahocComponent},
   {path:'lienhe',component: LienheComponent},
   {path:'thanhtoanmomo',component: ThanhtoanmomoComponent},
+  {path:'giangvien',component: GiangvienComponent},
 ];
 
 @NgModule({

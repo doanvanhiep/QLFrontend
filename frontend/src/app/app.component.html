@@ -15,22 +15,20 @@
             <div class="main-menu  d-none d-lg-block">
               <nav>
                 <ul id="navigation">
-                  <li><a [ngClass]="{'active': tab==='trangchu'}" (click)="tab='trangchu'" [routerLink]="['/']" routerLinkActive="router-link-active" >Trang chủ</a></li>
-                  <li><a [ngClass]="{'active': tab==='khoahoc'}" (click)="tab='khoahoc'" [routerLink]="['/khoahoc']" routerLinkActive="router-link-active">Khóa học</a></li>
-                  <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                  <li><a [ngClass]="{'active': tab==='trangchu'}" (click)="tab='trangchu'" [routerLink]="['/']"
+                      routerLinkActive="router-link-active">Trang chủ</a></li>
+                  <li><a [ngClass]="{'active': tab==='khoahoc'}" (click)="tab='khoahoc'" [routerLink]="['/khoahoc']"
+                      routerLinkActive="router-link-active">Khóa học</a></li>
+                  <li><a [ngClass]="{'active': tab==='gioithieu'}">Giới thiệu <i class="ti-angle-down"></i></a>
                     <ul class="submenu">
-                      <li><a href="#">course details</a></li>
-                      <li><a href="#">elements</a></li>
+                      <li><a (click)="tab='gioithieu'" [routerLink]="['/trungtam']"
+                          routerLinkActive="router-link-active">Trung tâm</a></li>
+                      <li><a (click)="tab='gioithieu'" [routerLink]="['/giangvien']"
+                          routerLinkActive="router-link-active">Giảng viên</a></li>
                     </ul>
                   </li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                    <ul class="submenu">
-                      <li><a href="blog.html">blog</a></li>
-                      <li><a href="single-blog.html">single-blog</a></li>
-                    </ul>
-                  </li>
-                  <li><a [ngClass]="{'active': tab==='lienhe'}" (click)="tab='lienhe'" [routerLink]="['/lienhe']" routerLinkActive="router-link-active" >Liên hệ</a></li>
+                  <li><a [ngClass]="{'active': tab==='lienhe'}" (click)="tab='lienhe'" [routerLink]="['/lienhe']"
+                      routerLinkActive="router-link-active">Liên hệ</a></li>
                 </ul>
               </nav>
             </div>
