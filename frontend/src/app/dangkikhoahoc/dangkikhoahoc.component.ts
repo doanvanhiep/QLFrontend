@@ -12,6 +12,7 @@ import { ComponentShareService } from '../../service/component-share.service';
 export class DangkikhoahocComponent implements OnInit {
     dangkiForm: FormGroup;
     LopHoc: any;
+    enabledSend: boolean = false;
     constructor(
         private formBuilder: FormBuilder,
         private verifyRecaptcha: VerifyRecaptchaService,
@@ -37,18 +38,22 @@ export class DangkikhoahocComponent implements OnInit {
     }
     resolved(capchaResponse: string) {
         if (capchaResponse == null) {
-            console.log("Captcha unvalid");
+            // console.log("Captcha unvalid");
+            this.enabledSend = false;
             return;
         }
         else {
             this.verifyRecaptcha.verifyTokenRecaptcha(capchaResponse)
                 .pipe()
                 .subscribe(data => {
-                    console.log(data);
+                    this.enabledSend = true;
+                    //console.log(data);
                 },
                     error => {
-                        console.log(error);
-                    });
+                        this.enabledSend = false;
+                        //console.log(error);
+                    }
+                );
         }
     }
     get f() { return this.dangkiForm.controls; }
@@ -61,17 +66,15 @@ export class DangkikhoahocComponent implements OnInit {
             this.f.phuongthucthanhtoan.value, this.LopHoc.HocPhi)
             .pipe()
             .subscribe(res => {
-                if(res.error==true || this.f.phuongthucthanhtoan.value=="trungtam")
-                {
-                    this.router.navigate([res.url],{
-                        queryParams:{message:res.queryParams}
+                if (res.error == true || this.f.phuongthucthanhtoan.value == "trungtam") {
+                    this.router.navigate([res.url], {
+                        queryParams: { message: res.queryParams }
                     });
                 }
-                else
-                {
+                else {
                     window.location.href = res.url;
                 }
-                
+
             });
     }
 }
