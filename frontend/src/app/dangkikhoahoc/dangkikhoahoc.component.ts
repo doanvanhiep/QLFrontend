@@ -66,6 +66,7 @@ export class DangkikhoahocComponent implements OnInit {
             this.f.phuongthucthanhtoan.value, this.LopHoc.HocPhi)
             .pipe()
             .subscribe(res => {
+                console.log(res);
                 if (res.error == true || this.f.phuongthucthanhtoan.value == "trungtam") {
                     this.router.navigate([res.url], {
                         queryParams: { message: res.queryParams }
