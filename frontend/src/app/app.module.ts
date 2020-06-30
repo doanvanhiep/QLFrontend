@@ -13,6 +13,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component';
 import { GiangvienComponent } from './giangvien/giangvien.component';
 import { DatePipe } from '@angular/common';
+import { TrungtamComponent } from './trungtam/trungtam.component';
+import { TrangchuComponent } from './trangchu/trangchu.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -21,7 +23,9 @@ import { DatePipe } from '@angular/common';
       DangkikhoahocComponent,
       LienheComponent,
       ThanhtoanmomoComponent,
-      GiangvienComponent
+      GiangvienComponent,
+      TrungtamComponent,
+      TrangchuComponent
    ],
    imports: [
       BrowserModule,
@@ -31,10 +35,10 @@ import { DatePipe } from '@angular/common';
       RecaptchaModule,
       FormsModule,
       ReactiveFormsModule
-      //thisistherecaptchamainmodule\\nRecaptchaFormsModule,
-      //thisisthemoduleforformincaseformvalidation\\nFormsModule
    ],
-   providers: [DatePipe],
+   providers: [
+      DatePipe
+   ],
    bootstrap: [
       AppComponent
    ]
