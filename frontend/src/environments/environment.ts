@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:3000/api/frontend/',
+  //apiUrl: 'https://d158afa2893c.ngrok.io/api/frontend/',
   apiVerifyCaptcha:'http://localhost:3000/api/verifycaptcha/',
   secretkeyCaptcha:'6LfWjuwUAAAAANPxLd6jU3ni6gnqg9dAaRRRPQJ-'
   

@@ -14,13 +14,15 @@ export class ThanhtoanmomoComponent implements OnInit {
             if(status==="Success")
             {
                 this.thanhcong=true;
+                this.thatbai=false;
             }
             else
             {
+                this.thanhcong=false;
                 this.thatbai=true;
             }
         });
-     }
+    }
 
     ngOnInit() {
 

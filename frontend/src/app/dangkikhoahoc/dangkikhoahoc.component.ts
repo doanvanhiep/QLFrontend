@@ -11,12 +11,13 @@ import { ComponentShareService } from '../../service/component-share.service';
 })
 export class DangkikhoahocComponent implements OnInit {
     dangkiForm: FormGroup;
-    LopHoc:any;
+    LopHoc: any;
+    enabledSend: boolean = false;
     constructor(
         private formBuilder: FormBuilder,
         private verifyRecaptcha: VerifyRecaptchaService,
-        private dangkiKH:DangkikhoahocService,
-        private router:Router,
+        private dangkiKH: DangkikhoahocService,
+        private router: Router,
         private share: ComponentShareService
     ) { }
 
@@ -25,45 +26,56 @@ export class DangkikhoahocComponent implements OnInit {
         this.dangkiForm = this.formBuilder.group({
             hoten: '',
             email: '',
-            sdt:'',
-            phuongthucthanhtoan:''
+            sdt: '',
+            phuongthucthanhtoan: ''
         });
-        if(!this.LopHoc.IDLopHoc)
-        {
+        if (!this.LopHoc.IDLopHoc) {
             this.router.navigate(['chitietkhoahoc']);
         }
     }
-    getDataLopHoc(){
-        this.LopHoc=this.share.receiveDataLopHoc();
+    getDataLopHoc() {
+        this.LopHoc = this.share.receiveDataLopHoc();
     }
     resolved(capchaResponse: string) {
-        if (capchaResponse == null ) {
-            console.log("Captcha unvalid");
+        if (capchaResponse == null) {
+            // console.log("Captcha unvalid");
+            this.enabledSend = false;
             return;
         }
         else {
             this.verifyRecaptcha.verifyTokenRecaptcha(capchaResponse)
-            .pipe()
-            .subscribe(data => {
-                console.log(data);
-            },
-            error => {
-                console.log(error);
-            });
+                .pipe()
+                .subscribe(data => {
+                    this.enabledSend = true;
+                    //console.log(data);
+                },
+                    error => {
+                        this.enabledSend = false;
+                        //console.log(error);
+                    }
+                );
         }
     }
     get f() { return this.dangkiForm.controls; }
     onSubmit() {
-        if(!this.f.phuongthucthanhtoan.value)
-        {
+        if (!this.f.phuongthucthanhtoan.value) {
             alert("Hãy chọn phuong thức thanh toán");
             return;
         }
-        alert(this.f.phuongthucthanhtoan.value);
-        // this.dangkiKH.sendMoMo(this.f.hoten.value, this.f.email.value, this.f.sdt.value,1,"123000")
-        // .pipe()
-        // .subscribe(res=>{
-        //     window.location.href=res.url;
-        // });
+        this.dangkiKH.dangKiLopHoc(this.f.hoten.value, this.f.email.value, this.f.sdt.value, this.LopHoc.IDLopHoc,
+            this.f.phuongthucthanhtoan.value, this.LopHoc.HocPhi)
+            .pipe()
+            .subscribe(res => {
+                console.log(res);
+                if (res.error == true || this.f.phuongthucthanhtoan.value == "trungtam") {
+                    this.router.navigate([res.url], {
+                        queryParams: { message: res.queryParams }
+                    });
+                }
+                else {
+                    window.location.href = res.url;
+                }
+
+            });
     }
 }

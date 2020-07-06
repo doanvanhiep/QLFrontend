@@ -11,7 +11,10 @@ import { LienheComponent } from './lienhe/lienhe.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component';
-
+import { GiangvienComponent } from './giangvien/giangvien.component';
+import { DatePipe } from '@angular/common';
+import { TrungtamComponent } from './trungtam/trungtam.component';
+import { TrangchuComponent } from './trangchu/trangchu.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -19,7 +22,10 @@ import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component'
       ChitietkhoahocComponent,
       DangkikhoahocComponent,
       LienheComponent,
-      ThanhtoanmomoComponent
+      ThanhtoanmomoComponent,
+      GiangvienComponent,
+      TrungtamComponent,
+      TrangchuComponent
    ],
    imports: [
       BrowserModule,
@@ -29,11 +35,10 @@ import { ThanhtoanmomoComponent } from './thanhtoanmomo/thanhtoanmomo.component'
       RecaptchaModule,
       FormsModule,
       ReactiveFormsModule
-      //thisistherecaptchamainmodule\nRecaptchaFormsModule,
-      //thisisthemoduleforformincaseformvalidation\nFormsModule
-
    ],
-   providers: [],
+   providers: [
+      DatePipe
+   ],
    bootstrap: [
       AppComponent
    ]
