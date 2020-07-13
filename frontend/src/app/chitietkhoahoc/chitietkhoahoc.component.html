@@ -1,54 +1,102 @@
 <div class="container-fluid">
-  <h1 class="custommargin" >{{lopHocPhan ? lopHocPhan.TenLopHocPhan : ""}}</h1>
+  <h1 class="custommargin">{{ lopHocPhan ? lopHocPhan.TenLopHocPhan : "" }}</h1>
   <div class="row">
     <div class="col-md-5 custompadding">
-      <img class="chitiethinh"
-        src="https://drive.google.com/uc?id={{lopHocPhan ? lopHocPhan.HinhAnh : '1_AcqzDV4K1LO9VXRNrWubSxaIstzQJPL'}}"
-        alt="">
+      <img
+        class="chitiethinh"
+        src="https://drive.google.com/uc?id={{
+          lopHocPhan ? lopHocPhan.HinhAnh : '1_AcqzDV4K1LO9VXRNrWubSxaIstzQJPL'
+        }}"
+        alt=""
+      />
     </div>
     <div class="col-md-7 custompadding">
       <form>
-        <div class="row"> 
+        <div class="row">
           <div class="col">
             <div class="form-group">
-              <label for="selectthongtin" class="input-lg">Thông tin lớp học</label>
-              <select [(ngModel)]="selectedThongTinLopHoc" #t (change)="changeIDLopHoc(t.value)"name="something" class="form-control input-lg" id="selectthongtin">
-                <option *ngFor="let ttlh of thongtinlophoc" value="{{ttlh.IDLopHoc}}">
-                  {{ttlh.ThongTinLopHoc}}
+              <label for="selectthongtin" class="input-lg"
+                >Thông tin lớp học</label
+              >
+              <select
+                [(ngModel)]="selectedThongTinLopHoc"
+                #t
+                (change)="changeIDLopHoc(t.value)"
+                name="something"
+                class="form-control input-lg"
+                id="selectthongtin"
+              >
+                <option
+                  *ngFor="let ttlh of thongtinlophoc; let i = index"
+                  value="{{ ttlh.IDLopHoc }}"
+                >
+                  {{ ttlh.ThongTinLopHoc }}
                 </option>
               </select>
             </div>
           </div>
           <div class="col">
-            <div class="form-group">
-              <label for="selectThuTrongTuan" class="input-lg">Chú thích giờ ca học</label>
-              <p class="input-lg">Ca 1(7h-9h); Ca 2(9h15-11h15); Ca 3(13h-15h); Ca 4(15h15-17h15); Ca 5(19h-21h)</p>
+            <div class="card custom-border">
+              <div class="form-group">
+                <label
+                  for="selectThuTrongTuan"
+                  class="input-lg"
+                  style="font-size: 20px;"
+                  >Chú thích giờ ca học</label
+                >
+                <p class="input-lg">
+                  Ca 1(7h-9h); Ca 2(9h15-11h15); Ca 3(13h-15h);<br />
+                  Ca 4(15h15-17h15); Ca 5(19h-21h)
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="input-lg">Học phí: {{lopHocPhan ? lopHocPhan.HocPhi : 0 | number}} VNĐ</label>
+          <label class="input-lg"
+            >Học phí:
+            {{ lopHocPhan ? (lopHocPhan.HocPhi | number) : 0 }} VNĐ</label
+          >
         </div>
         <div class="form-group">
-          <label class="input-lg">Số buổi: {{lopHocPhan ? lopHocPhan.SoBuoi : 0}}</label>
+          <label class="input-lg"
+            >Số buổi: {{ lopHocPhan ? lopHocPhan.SoBuoi : 0 }}</label
+          >
         </div>
         <div class="form-group">
-          <label class="input-lg">Sỉ số: {{lopHocPhan ? lopHocPhan.SiSo : 0}}</label>
+          <label class="input-lg"
+            >Sỉ số: {{ lopHocPhan ? lopHocPhan.SiSo : 0 }}</label
+          >
         </div>
         <div class="form-group">
-          <label class="input-lg">Ngày khai giảng: {{thongTinKhaiGiang ? thongTinKhaiGiang.NgayKhaiGiang:""}}</label>
+          <label class="input-lg"
+            >Ngày khai giảng:
+            {{
+              thongTinKhaiGiang
+                ? (thongTinKhaiGiang.NgayKhaiGiang | date: "dd/MM/yyyy")
+                : ""
+            }}</label
+          >
         </div>
         <div class="form-group">
-          <label class="input-lg">Ngày bế giảng: {{thongTinKhaiGiang ? thongTinKhaiGiang.NgayBeGiang:""}}</label>
+          <label class="input-lg"
+            >Ngày bế giảng:
+            {{
+              thongTinKhaiGiang
+                ? (thongTinKhaiGiang.NgayBeGiang | date: "dd/MM/yyyy")
+                : ""
+            }}</label
+          >
         </div>
         <div class="form-group">
           <label class="input-lg">Mô tả:</label>
-          <p class="input-lg">{{lopHocPhan ? lopHocPhan.MoTa : ""}}</p>
+          <p class="input-lg">{{ lopHocPhan ? lopHocPhan.MoTa : "" }}</p>
         </div>
       </form>
-      <button class="btn btn-success custommarginBtn" (click)="dangki()">Đăng kí lớp học</button>
+      <button class="btn btn-success custommarginBtn" (click)="dangki()">
+        Đăng kí lớp học
+      </button>
     </div>
   </div>
 </div>
-

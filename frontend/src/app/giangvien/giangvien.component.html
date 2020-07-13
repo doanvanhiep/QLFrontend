@@ -1,18 +1,39 @@
 <!-- our_team_member_start -->
 <div class="our_team_member">
   <div class="container">
-    <div class="row" *ngFor="let a1 of arrayNumberOfRow;let i = index">
-      <div class="col-xl-3 col-md-6 col-lg-3" *ngFor="let a1 of arrayOneRow;let j = index">
-        <div class="single_team" *ngIf="listGiangVien.length > i*4+j">
+    <div class="row" *ngFor="let a1 of arrayNumberOfRow; let i = index">
+      <div
+        class="col-xl-3 col-md-6 col-lg-3"
+        *ngFor="let a1 of arrayOneRow; let j = index"
+      >
+        <div class="single_team" *ngIf="listGiangVien.length > i * 4 + j">
           <div class="thumb">
-            <img style="width: 255px;height: 290px;"  src="https://drive.google.com/uc?id={{listGiangVien ? listGiangVien[i+j].HinhAnh : '1_AcqzDV4K1LO9VXRNrWubSxaIstzQJPL'}}" alt="">
+            <img
+              style="width: 255px; height: 290px;"
+              src="https://drive.google.com/uc?id={{
+                listGiangVien
+                  ? listGiangVien[i * 4 + j].HinhAnh
+                  : '1_AcqzDV4K1LO9VXRNrWubSxaIstzQJPL'
+              }}"
+              alt=""
+            />
           </div>
           <div class="master_name text-center">
-            <p style=" text-align: left;font-size: 18px;font-weight:bold ;">{{listGiangVien[i*4+j].HoTen}}</p>
-            <p style=" text-align: left;font-size: 18px;font-weight:bold ;">{{listGiangVien[i*4+j].SoDienThoai}}</p>
-            <p style=" text-align: left;font-size: 18px;font-weight:bold ;">{{listGiangVien[i*4+j].Email}}</p>
-            <p style="text-align: justify;">{{listGiangVien[i*4+j].MoTa}}</p>
+            <p style="text-align: left; font-size: 18px; font-weight: bold;">
+              {{ listGiangVien[i * 4 + j].HoTen }}
+            </p>
+            <p style="text-align: left; font-size: 18px; font-weight: bold;">
+              {{ listGiangVien[i * 4 + j].SoDienThoai }}
+            </p>
+            <p style="text-align: left; font-size: 18px; font-weight: bold;">
+              {{ listGiangVien[i * 4 + j].Email }}
+            </p>
+            <p style="text-align: justify;">
+              {{ listGiangVien[i * 4 + j].MoTa }}
+            </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
