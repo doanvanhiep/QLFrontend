@@ -1,12 +1,17 @@
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
-input[type=radio] {
-    width: 18px;
-    height: 18px;
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
 }
-.btnDangKi{
-    margin-top: 10px;
-    margin-bottom: 50px;
+.btnDangKi {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.custom-border {
+  border-radius: 12px;
+  border-color: black;
+  border-style: groove;
 }

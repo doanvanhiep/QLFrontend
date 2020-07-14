@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,500i,600,700,800&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,500i,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,500i,600,700,800&display=swap");
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_extend.scss */
 .flex-center-start {
   display: -webkit-box;
@@ -127,7 +127,7 @@ p {
   line-height: 28px;
   color: #919191;
   margin-bottom: 13px;
-  font-family: "Crimson Text", serif;
+  font-family: "Roboto", serif;
 }
 
 /* line 67, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */

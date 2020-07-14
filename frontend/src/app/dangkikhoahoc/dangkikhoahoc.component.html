@@ -3,57 +3,111 @@
     <div class="col-md-6">
       <h1>Thông tin cá nhân</h1>
       <form [formGroup]="dangkiForm" (ngSubmit)="onSubmit()">
-        <div class="form-group" >
+        <div class="form-group">
           <label for="hoten" class="input-lg">Họ tên</label>
-          <input type="text" class="form-control input-lg" formControlName="hoten">
+          <input
+            type="text"
+            class="form-control input-lg"
+            formControlName="hoten"
+          />
         </div>
         <div class="form-group">
           <label for="emai" class="input-lg">Email</label>
-          <input type="email" class="form-control input-lg" formControlName="email">
+          <input
+            type="email"
+            class="form-control input-lg"
+            formControlName="email"
+          />
         </div>
         <div class="form-group">
           <label for="sdt" class="input-lg">Số điện thoại</label>
-          <input type="text" class="form-control input-lg" formControlName="sdt">
+          <input
+            type="text"
+            class="form-control input-lg"
+            formControlName="sdt"
+          />
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" formControlName="phuongthucthanhtoan"
-          id="momo" value="momo">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="phuongthucthanhtoan"
+            id="momo"
+            value="momo"
+          />
           <label class="form-check-label input-lg" for="momo">
             Thanh toán momo
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input"type="radio" formControlName="phuongthucthanhtoan" 
-          id="trungtam" value="trungtam">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="phuongthucthanhtoan"
+            id="trungtam"
+            value="trungtam"
+          />
           <label class="form-check-label input-lg" for="trungtam">
             Thanh toán trung tâm
           </label>
         </div>
         <div class="center">
-          <re-captcha (resolved)="resolved($event)" siteKey="6LfWjuwUAAAAAHIle9C12dwHTS4ad4qubvmNY-5u"></re-captcha>
-          <button *ngIf="enabledSend" type="submit" class="btn btn-primary btnDangKi custombtn">Đăng kí</button>
+          <re-captcha
+            (resolved)="resolved($event)"
+            siteKey="6LfWjuwUAAAAAHIle9C12dwHTS4ad4qubvmNY-5u"
+          ></re-captcha>
+          <button
+            *ngIf="enabledSend"
+            type="submit"
+            class="btn btn-primary btnDangKi custombtn"
+          >
+            Đăng kí
+          </button>
         </div>
       </form>
     </div>
     <div class="col-md-6">
       <h1>Thông tin lớp học</h1>
-      <form>
-        <div class="form-group">
-          <label for="hoten" class="input-lg">Tên khóa học: {{LopHoc.TenLopHocPhan}}</label>
-        </div>
-        <div class="form-group">
-          <label for="emai" class="input-lg">Ca học: {{LopHoc.ThongTinLopHoc}}</label>
-        </div>
-        <div class="form-group">
-          <label for="sdt" class="input-lg">Ngày khai giảng: {{LopHoc.ThongTinKhaiGiang ? LopHoc.ThongTinKhaiGiang.NgayKhaiGiang:""}}</label>
-        </div>
-        <div class="form-group">
-          <label for="sdt" class="input-lg">Ngày bế giảng: {{LopHoc.ThongTinKhaiGiang ? LopHoc.ThongTinKhaiGiang.NgayBeGiang:""}}</label>
-        </div>
-        <div class="form-group">
-          <label for="sdt" class="input-lg">Học phí: {{LopHoc.HocPhi}}</label>
-        </div>
-      </form>
+      <div class="custom-border">
+        <form style="margin-left: 3%;">
+          <div class="form-group">
+            <label for="hoten" class="input-lg"
+              >Tên khóa học: {{ LopHoc.TenLopHocPhan }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="email" class="input-lg"
+              >Ca học: {{ LopHoc.ThongTinLopHoc }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="ngaykhaigiang" class="input-lg"
+              >Ngày khai giảng:
+              {{
+                LopHoc.ThongTinKhaiGiang
+                  ? (LopHoc.ThongTinKhaiGiang.NgayKhaiGiang
+                    | date: "dd/MM/yyyy")
+                  : ""
+              }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="ngaybegiang" class="input-lg"
+              >Ngày bế giảng:
+              {{
+                LopHoc.ThongTinKhaiGiang
+                  ? (LopHoc.ThongTinKhaiGiang.NgayBeGiang | date: "dd/MM/yyyy")
+                  : ""
+              }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="hocphi" class="input-lg"
+              >Học phí: {{ LopHoc.HocPhi | number }} VNĐ</label
+            >
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

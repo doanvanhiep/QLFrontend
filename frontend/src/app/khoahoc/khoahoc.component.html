@@ -1,4 +1,4 @@
-<!-- popular_courses_start -->  
+<!-- popular_courses_start -->
 <div class="popular_courses">
   <div class="container">
     <div class="row">
@@ -7,12 +7,28 @@
           <nav>
             <ul class="nav" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="0" data-toggle="tab" (click)="getIDKhoaHoc($event)" role="tab" aria-controls="home"
-                  aria-selected="true">Tất cả</a>
+                <a
+                  class="nav-link active"
+                  id="0"
+                  data-toggle="tab"
+                  (click)="getIDKhoaHoc($event)"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >Tất cả</a
+                >
               </li>
               <li class="nav-item" *ngFor="let item of loaikhoahocs">
-                <a class="nav-link" id={{item.IDKhoaHoc}} data-toggle="tab"  (click)="getIDKhoaHoc($event)" role="tab"
-                  aria-controls="design" aria-selected="false">{{item.TenKhoaHoc}}</a>
+                <a
+                  class="nav-link"
+                  id="{{ item.IDKhoaHoc }}"
+                  data-toggle="tab"
+                  (click)="getIDKhoaHoc($event)"
+                  role="tab"
+                  aria-controls="design"
+                  aria-selected="false"
+                  >{{ item.TenKhoaHoc }}</a
+                >
               </li>
             </ul>
           </nav>
@@ -23,35 +39,60 @@
   <div class="all_courses">
     <div class="container">
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let lophocphan of lophocphans">
+            <div
+              class="col-xl-4 col-lg-4 col-md-6"
+              *ngFor="let lophocphan of lophocphans"
+            >
               <div class="single_courses">
                 <div class="thumb">
-                  <a  (click)="sendData($event)" [routerLink]="['/chitietkhoahoc']"
-                  routerLinkActive="router-link-active" >
-                    <img class="sizeofkhoahoc" id={{lophocphan.IDLopHocPhan}} src="https://drive.google.com/uc?id={{lophocphan.HinhAnh}}" alt="">
+                  <a
+                    (click)="sendData($event)"
+                    [routerLink]="['/chitietkhoahoc']"
+                    routerLinkActive="router-link-active"
+                  >
+                    <img
+                      class="sizeofkhoahoc"
+                      id="{{ lophocphan.IDLopHocPhan }}"
+                      src="https://drive.google.com/uc?id={{
+                        lophocphan.HinhAnh
+                      }}"
+                      alt=""
+                    />
                   </a>
                 </div>
-                <div class="courses_info"> 
-                  <span>{{lophocphan.TenKhoaHoc}}</span>
-                  <h3><a id={{lophocphan.IDLopHocPhan}} (click)="sendData($event)"[routerLink]="['/chitietkhoahoc']"
-                  routerLinkActive="router-link-active" >{{lophocphan.TenLopHocPhan}} </a></h3>
+                <div class="courses_info">
+                  <span>{{ lophocphan.TenKhoaHoc }}</span>
+                  <h3>
+                    <a
+                      id="{{ lophocphan.IDLopHocPhan }}"
+                      (click)="sendData($event)"
+                      [routerLink]="['/chitietkhoahoc']"
+                      routerLinkActive="router-link-active"
+                      >{{ lophocphan.TenLopHocPhan }}
+                    </a>
+                  </h3>
                   <div class="star_prise d-flex justify-content-between">
                     <div class="prise">
                       <span class="active_prise">
-                        {{lophocphan.HocPhi | number}} VNĐ
+                        {{ lophocphan.HocPhi | number }} VNĐ
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <!-- <div class="col-xl-12"> -->
-              <!-- <div class="more_courses text-center"> -->
-                <!-- <a href="#" class="boxed_btn_rev">More Courses</a> -->
-              <!-- </div> -->
+            <!-- <div class="more_courses text-center"> -->
+            <!-- <a href="#" class="boxed_btn_rev">More Courses</a> -->
+            <!-- </div> -->
             <!-- </div> -->
           </div>
         </div>
