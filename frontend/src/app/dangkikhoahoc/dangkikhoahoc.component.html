@@ -68,43 +68,46 @@
     </div>
     <div class="col-md-6">
       <h1>Thông tin lớp học</h1>
-      <form>
-        <div class="form-group">
-          <label for="hoten" class="input-lg"
-            >Tên khóa học: {{ LopHoc.TenLopHocPhan }}</label
-          >
-        </div>
-        <div class="form-group">
-          <label for="email" class="input-lg"
-            >Ca học: {{ LopHoc.ThongTinLopHoc }}</label
-          >
-        </div>
-        <div class="form-group">
-          <label for="ngaykhaigiang" class="input-lg"
-            >Ngày khai giảng:
-            {{
-              LopHoc.ThongTinKhaiGiang
-                ? (LopHoc.ThongTinKhaiGiang.NgayKhaiGiang | date: "dd/MM/yyyy")
-                : ""
-            }}</label
-          >
-        </div>
-        <div class="form-group">
-          <label for="ngaybegiang" class="input-lg"
-            >Ngày bế giảng:
-            {{
-              LopHoc.ThongTinKhaiGiang
-                ? (LopHoc.ThongTinKhaiGiang.NgayBeGiang | date: "dd/MM/yyyy")
-                : ""
-            }}</label
-          >
-        </div>
-        <div class="form-group">
-          <label for="hocphi" class="input-lg"
-            >Học phí: {{ LopHoc.HocPhi | number }} VNĐ</label
-          >
-        </div>
-      </form>
+      <div class="custom-border">
+        <form style="margin-left: 3%;">
+          <div class="form-group">
+            <label for="hoten" class="input-lg"
+              >Tên khóa học: {{ LopHoc.TenLopHocPhan }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="email" class="input-lg"
+              >Ca học: {{ LopHoc.ThongTinLopHoc }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="ngaykhaigiang" class="input-lg"
+              >Ngày khai giảng:
+              {{
+                LopHoc.ThongTinKhaiGiang
+                  ? (LopHoc.ThongTinKhaiGiang.NgayKhaiGiang
+                    | date: "dd/MM/yyyy")
+                  : ""
+              }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="ngaybegiang" class="input-lg"
+              >Ngày bế giảng:
+              {{
+                LopHoc.ThongTinKhaiGiang
+                  ? (LopHoc.ThongTinKhaiGiang.NgayBeGiang | date: "dd/MM/yyyy")
+                  : ""
+              }}</label
+            >
+          </div>
+          <div class="form-group">
+            <label for="hocphi" class="input-lg"
+              >Học phí: {{ LopHoc.HocPhi | number }} VNĐ</label
+            >
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
